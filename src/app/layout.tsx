@@ -27,13 +27,16 @@ const halvarEngFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MolniSoft",
-  description: "MolniSoft",
+  title: "Molnisoft",
+  description: "Molnisoft",
 };
 
 export default function RootLayout({ children }: IChild) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head>
       <body className={[gilroyFont.variable, halvarEngFont.variable].join(" ")}>
         {children}
       </body>

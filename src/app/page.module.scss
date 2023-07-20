@@ -122,7 +122,10 @@
             text-transform: uppercase;
           }
 
-          &[data-active] {
+          // &[data-active] {
+          //   border-bottom: 2px solid #fff;
+          // }
+          &:focus {
             border-bottom: 2px solid #fff;
           }
         }
@@ -221,11 +224,10 @@
 }
 
 .about {
-  padding-top: 5rem;
-  padding-bottom: 5.5rem;
+  padding-top: 8rem;
 
   @media screen and (max-width: 1024px) {
-    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
   }
 
   & > .container {
@@ -375,10 +377,10 @@
 }
 
 .partners {
-  padding-bottom: 10rem;
+  padding-top: 6rem;
 
   @media screen and (max-width: 1024px) {
-    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
   }
 
   & > .container {
@@ -421,6 +423,7 @@
           & > img {
             padding-left: 1rem;
             padding-right: 1rem;
+            width: 10rem;
 
             object-fit: contain;
           }
@@ -431,10 +434,10 @@
 }
 
 .services {
-  padding-bottom: 10rem;
+  padding-top: 10rem;
 
   @media screen and (max-width: 1024px) {
-    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
   }
 
   & > .container {
@@ -549,10 +552,10 @@
 }
 
 .portfolio {
-  padding-bottom: 10rem;
+  padding-top: 10rem;
 
   @media screen and (max-width: 1024px) {
-    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
   }
 
   & > .container {
@@ -745,10 +748,10 @@
 }
 
 .feedback {
-  padding-bottom: 7.5rem;
+  padding-top: 10rem;
 
   @media screen and (max-width: 1024px) {
-    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
   }
 
   & > .container {
@@ -978,10 +981,12 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3.75rem;
+  margin-top: 7.5rem;
 
   border-radius: 0.75rem;
 
   @media screen and (max-width: 1024px) {
+    margin-top: 3.75rem;
     margin-bottom: 0;
     padding: 1.25rem;
   }
