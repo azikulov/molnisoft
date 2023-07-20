@@ -61,7 +61,7 @@ export default function Home() {
       <header
         className={[
           styles.header,
-          isShow ? "" : [styles.show, styles.bg].join(" "),
+          !isShow ? "" : [styles.show, styles.bg].join(" "),
         ].join(" ")}
         id="header"
       >
