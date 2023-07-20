@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, createRef } from "react";
+import { useEffect, createRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -11,9 +11,13 @@ import styles from "./page.module.scss";
 export default function Home() {
   const carouselRef = createRef<Carousel>();
 
+  const [isShow, setIsShow] = useState(false);
+
   function handleNextSlide() {
+    const col = window.innerWidth <= 1024 ? 1 : 3;
+
     if (
-      (carouselRef.current?.state.totalItems as number) - 2 ===
+      (carouselRef.current?.state.totalItems as number) - col ===
       carouselRef.current?.state.currentSlide
     )
       return carouselRef.current?.goToSlide(0);
@@ -23,6 +27,10 @@ export default function Home() {
 
   function handlePreviousSlide() {
     carouselRef.current?.previous(1);
+  }
+
+  function handleToggle() {
+    setIsShow((prev) => !prev);
   }
 
   useEffect(() => {
@@ -36,8 +44,8 @@ export default function Home() {
       ).scrollTop;
 
       if (header?.style) {
-        if (positionY >= 80) header.style.background = "#17171B";
-        else header.style.background = "#17171B00";
+        if (positionY >= 80) header.classList.add(styles.bg);
+        else header.classList.remove(styles.bg);
       }
     }
 
@@ -50,7 +58,13 @@ export default function Home() {
 
   return (
     <div className="">
-      <header className={styles.header} id="header">
+      <header
+        className={[
+          styles.header,
+          isShow ? "" : [styles.show, styles.bg].join(" "),
+        ].join(" ")}
+        id="header"
+      >
         <div className={styles.container}>
           <div className={styles.inner}>
             <Link className={styles.logo} href="/">
@@ -117,6 +131,35 @@ export default function Home() {
                 Контакты
               </Link>
             </nav>
+
+            <button onClick={handleToggle} className={styles.button}>
+              <svg
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1H25"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M1 9H25"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M1 17H25"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </header>
@@ -396,7 +439,7 @@ export default function Home() {
               responsive={{
                 desktop: {
                   breakpoint: { max: 3000, min: 1024 },
-                  items: 2,
+                  items: 3,
                   slidesToSlide: 1,
                 },
                 tablet: {
@@ -407,7 +450,7 @@ export default function Home() {
               }}
               className={styles.cards}
             >
-              {Array(4)
+              {Array(10)
                 .fill("")
                 .map((_, index) => (
                   <div key={index} className={styles.card}>
@@ -425,10 +468,7 @@ export default function Home() {
                     <p className={styles.description}>
                       Lorem Ipsum - это текст-рыба, часто используемый в печати
                       и вэб-дизайне. Lorem Ipsum является стандартной рыбой для
-                      текстов на латинице с начала XVI века. В то время некий
-                      безымянный печатник создал большую коллекцию размеров и
-                      форм шрифтов, используя Lorem Ipsum для распечатки
-                      образцов.
+                      текстов на латинице с начала XVI века.
                     </p>
 
                     <Link href="/#" className={styles.button}>
@@ -438,6 +478,47 @@ export default function Home() {
                   </div>
                 ))}
             </Carousel>
+
+            <div className={styles.arrows}>
+              <button className={styles.left} onClick={handlePreviousSlide}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                >
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="32"
+                    transform="matrix(-1 0 0 1 64 0)"
+                    fill="#23232A"
+                  />
+                  <path
+                    d="M45 32.5H18.5M18.5 32.5L27 24M18.5 32.5L27 41"
+                    stroke="white"
+                    stroke-width="3"
+                  />
+                </svg>
+              </button>
+              <button className={styles.right} onClick={handleNextSlide}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="64"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                >
+                  <circle cx="32" cy="32" r="32" fill="#23232A" />
+                  <path
+                    d="M19 32.5H45.5M45.5 32.5L37 24M45.5 32.5L37 41"
+                    stroke="white"
+                    stroke-width="3"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
