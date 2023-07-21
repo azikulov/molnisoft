@@ -194,9 +194,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.inner}>
             <h1 className={styles.title}>
-              Профессиональная аутсорсинговая <br /> студия полного цикла для{" "}
-              <br />
-              разработки компьютерной графики
+              Студия полного цикла по <br /> разработке компьютерной графики
             </h1>
 
             <button
@@ -204,7 +202,7 @@ export default function Home() {
               className={styles.button}
             >
               <div className={styles.background}></div>
-              <span className={styles.text}>Заказать услугу</span>
+              <span className={styles.text}>Связаться с нами</span>
             </button>
           </div>
         </div>
@@ -214,10 +212,7 @@ export default function Home() {
       <div className={styles.about}>
         <div className={styles.container}>
           <div className={styles.inner}>
-            <h1 className={styles.title}>
-              Мы — аутсорс-студия полного цикла в сфере разработки компьютерной
-              графики
-            </h1>
+            <h1 className={styles.title}>Мы создаем виртуальные миры </h1>
 
             <div className={styles.image}>
               <div className={styles.blur}></div>
@@ -226,26 +221,35 @@ export default function Home() {
 
             <div className={styles.content}>
               <p className={styles.title}>
-                Реализуем вашу идею с нуля или выполним конкретную задачу на
-                любой стадии: от концепции до технической реализации и
-                интеграции
+                Molnisoft - международная аутсорс студия в сфере CG-разработки.
+                Мы специализирующаяся на разработке игр, инжиниринге,
+                портировании, артах и анимации, DevOps, VR и AR-разработке.
+                <br />
+                <br />
+                Уже более пяти лет, наша команда покоряет игровую индустрию,
+                создавая уникальные проекты. Мы стремимся к тому, чтобы быть
+                эффективными, делая больше и лучше в каждом отдельном
+                направлении.
+                <br />
+                <br />
+                Наша главная цель - качественная реализация ваших идей!
               </p>
 
               <div className={styles.cards}>
                 <div className={styles.card}>
-                  <h1 className={styles.number}>7</h1>
+                  <h1 className={styles.number}>5</h1>
 
-                  <p className={styles.text}>лет в работе</p>
+                  <p className={styles.text}>лет в разработке</p>
                 </div>
 
                 <div className={styles.card}>
-                  <h1 className={styles.number}>60+</h1>
+                  <h1 className={styles.number}>70+</h1>
 
-                  <p className={styles.text}>выполненных работ</p>
+                  <p className={styles.text}>выполненных проектов</p>
                 </div>
 
                 <div className={styles.card}>
-                  <h1 className={styles.number}>40+</h1>
+                  <h1 className={styles.number}>30+</h1>
 
                   <p className={styles.text}>художников и разработчиков</p>
                 </div>
@@ -259,9 +263,7 @@ export default function Home() {
       <div className={styles.partners}>
         <div className={styles.container}>
           <div className={styles.inner}>
-            <h1 className={styles.title}>
-              Нам доверяют самые крупные клиенты этого мира
-            </h1>
+            <h1 className={styles.title}>Нам доверяют лучшие</h1>
 
             <div className={styles.cards}>
               <div className={styles.card}>
@@ -298,12 +300,12 @@ export default function Home() {
           <div className={styles.inner}>
             <div className={styles.top}>
               <h1 className={styles.title}>
-                Мы предоставляем широкий спектр услуг
+                МЫ ПРЕДОСТАВЛЯЕМ ШИРОКИЙ СПЕКТР УСЛУГ
               </h1>
 
               <Link href="#" className={styles.button}>
                 <div className={styles.background}></div>
-                <span className={styles.text}>Заказать услугу</span>
+                <span className={styles.text}>Связаться с нами</span>
               </Link>
             </div>
 
@@ -328,8 +330,8 @@ export default function Home() {
                 </div>
 
                 <p className={styles.title}>
-                  3D моделирование и визуализация: Создание реалистичных 3D
-                  моделей и визуализаций, от прототипов и архи
+                  3D-графика: Разработка реалистичных и стилизованных 3D-моделей
+                  для игр, кино и рекламы.
                 </p>
               </div>
 
@@ -353,9 +355,9 @@ export default function Home() {
                 </div>
 
                 <p className={styles.title}>
-                  Анимация и спецэффекты: Разработка захватывающей анимации,
-                  спецэффектов и визуальных элементов для фильмов, рекламных
-                  роликов, игр и других медиа-проектов.
+                  2D-графика: Отрисовка концептов и иллюстраций. Создание
+                  уникальных графических решений от локаций и персонажей до
+                  интерфейсов и конок.
                 </p>
               </div>
 
@@ -379,9 +381,8 @@ export default function Home() {
                 </div>
 
                 <p className={styles.title}>
-                  Графический дизайн: Создание уникальных и привлекательных
-                  графических решений, включая логотипы, упаковку, рекламные
-                  материалы и пользовательский интерфейс.
+                  Анимация: Создание комплексной анимации персонажей, пропсов и
+                  элементов окружения под любые технические требования.
                 </p>
               </div>
 
@@ -405,10 +406,8 @@ export default function Home() {
                 </div>
 
                 <p className={styles.title}>
-                  Виртуальная реальность и дополненная реальность: Разработка
-                  впечатляющих виртуальных и дополненных реальностей, включая
-                  интерактивные визуализации, тренировочные симуляторы и
-                  виртуальные туры.
+                  Разработка: Полный цикл разработки игр. Реализация ваших идей
+                  нашими опытными специалистами.
                 </p>
               </div>
             </div>
