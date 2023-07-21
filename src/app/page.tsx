@@ -222,7 +222,7 @@ export default function Home() {
             <div className={styles.content}>
               <p className={styles.title}>
                 Molnisoft - международная аутсорс студия в сфере CG-разработки.
-                Мы специализирующаяся на разработке игр, инжиниринге,
+                Мы специализируемся на разработке игр, инжиниринге,
                 портировании, артах и анимации, DevOps, VR и AR-разработке.
                 <br />
                 <br />
@@ -303,10 +303,13 @@ export default function Home() {
                 МЫ ПРЕДОСТАВЛЯЕМ ШИРОКИЙ СПЕКТР УСЛУГ
               </h1>
 
-              <Link href="#" className={styles.button}>
+              <button
+                onClick={handleScrollTo("contacts")}
+                className={styles.button}
+              >
                 <div className={styles.background}></div>
                 <span className={styles.text}>Связаться с нами</span>
-              </Link>
+              </button>
             </div>
 
             <div className={styles.cards}>
@@ -357,7 +360,7 @@ export default function Home() {
                 <p className={styles.title}>
                   2D-графика: Отрисовка концептов и иллюстраций. Создание
                   уникальных графических решений от локаций и персонажей до
-                  интерфейсов и конок.
+                  интерфейсов и иконок.
                 </p>
               </div>
 
